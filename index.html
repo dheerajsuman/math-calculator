@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Mathematical Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="header">
+                <h1>Advanced Math Calculator</h1>
+                <p class="subtitle">Scientific & Graphical</p>
+            </div>
+
+            <div class="display-section">
+                <div class="history">
+                    <span id="history">0</span>
+                </div>
+                <div class="display">
+                    <input type="text" id="display" class="display-input" placeholder="0" readonly>
+                </div>
+            </div>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="basic">Basic</button>
+                <button class="tab-btn" data-tab="scientific">Scientific</button>
+                <button class="tab-btn" data-tab="converter">Converter</button>
+                <button class="tab-btn" data-tab="graph">Graph</button>
+            </div>
+
+            <!-- Basic Calculator Tab -->
+            <div id="basic" class="tab-content active">
+                <div class="buttons-grid basic-grid">
+                    <button class="btn func-btn" id="clear">C</button>
+                    <button class="btn func-btn" id="delete">⌫</button>
+                    <button class="btn func-btn">%</button>
+                    <button class="btn operator">/</button>
+
+                    <button class="btn">7</button>
+                    <button class="btn">8</button>
+                    <button class="btn">9</button>
+                    <button class="btn operator">*</button>
+
+                    <button class="btn">4</button>
+                    <button class="btn">5</button>
+                    <button class="btn">6</button>
+                    <button class="btn operator">-</button>
+
+                    <button class="btn">1</button>
+                    <button class="btn">2</button>
+                    <button class="btn">3</button>
+                    <button class="btn operator">+</button>
+
+                    <button class="btn zero">0</button>
+                    <button class="btn">.</button>
+                    <button class="btn equals">=</button>
+                </div>
+            </div>
+
+            <!-- Scientific Calculator Tab -->
+            <div id="scientific" class="tab-content">
+                <div class="buttons-grid scientific-grid">
+                    <button class="btn func-btn" id="clear-sci">C</button>
+                    <button class="btn func-btn" id="delete-sci">⌫</button>
+                    <button class="btn func-btn">π</button>
+                    <button class="btn func-btn">e</button>
+
+                    <button class="btn sci-func">sin</button>
+                    <button class="btn sci-func">cos</button>
+                    <button class="btn sci-func">tan</button>
+                    <button class="btn sci-func">√</button>
+
+                    <button class="btn sci-func">log</button>
+                    <button class="btn sci-func">ln</button>
+                    <button class="btn sci-func">x²</button>
+                    <button class="btn sci-func">x³</button>
+
+                    <button class="btn sci-func">1/x</button>
+                    <button class="btn sci-func">n!</button>
+                    <button class="btn sci-func">|x|</button>
+                    <button class="btn operator">^</button>
+
+                    <button class="btn">7</button>
+                    <button class="btn">8</button>
+                    <button class="btn">9</button>
+                    <button class="btn operator">/</button>
+
+                    <button class="btn">4</button>
+                    <button class="btn">5</button>
+                    <button class="btn">6</button>
+                    <button class="btn operator">*</button>
+
+                    <button class="btn">1</button>
+                    <button class="btn">2</button>
+                    <button class="btn">3</button>
+                    <button class="btn operator">-</button>
+
+                    <button class="btn zero">0</button>
+                    <button class="btn">.</button>
+                    <button class="btn operator">+</button>
+                    <button class="btn equals">=</button>
+                </div>
+            </div>
+
+            <!-- Unit Converter Tab -->
+            <div id="converter" class="tab-content">
+                <div class="converter-section">
+                    <div class="converter-group">
+                        <label>Temperature</label>
+                        <div class="converter-row">
+                            <input type="number" id="celsius" placeholder="°C" class="converter-input">
+                            <span>=</span>
+                            <input type="number" id="fahrenheit" placeholder="°F" class="converter-input">
+                        </div>
+                    </div>
+
+                    <div class="converter-group">
+                        <label>Length</label>
+                        <div class="converter-row">
+                            <input type="number" id="meters" placeholder="Meters" class="converter-input">
+                            <span>=</span>
+                            <input type="number" id="feet" placeholder="Feet" class="converter-input">
+                        </div>
+                    </div>
+
+                    <div class="converter-group">
+                        <label>Weight</label>
+                        <div class="converter-row">
+                            <input type="number" id="kg" placeholder="Kilograms" class="converter-input">
+                            <span>=</span>
+                            <input type="number" id="lbs" placeholder="Pounds" class="converter-input">
+                        </div>
+                    </div>
+
+                    <button class="btn equals" id="reset-converter">Reset Converters</button>
+                </div>
+            </div>
+
+            <!-- Graph Tab -->
+            <div id="graph" class="tab-content">
+                <div class="graph-section">
+                    <div class="graph-controls">
+                        <input type="text" id="formula" placeholder="Enter formula: e.g., x^2, sin(x), sqrt(x)" class="formula-input">
+                        <button class="btn equals" id="plot-graph">Plot Graph</button>
+                    </div>
+                    <canvas id="graphCanvas" class="graph-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3>Calculator Features</h3>
+            <ul>
+                <li>✓ Basic arithmetic operations</li>
+                <li>✓ Trigonometric functions (sin, cos, tan)</li>
+                <li>✓ Logarithmic functions</li>
+                <li>✓ Power and factorial operations</li>
+                <li>✓ Unit converters</li>
+                <li>✓ Function graphing</li>
+                <li>✓ Calculation history</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
